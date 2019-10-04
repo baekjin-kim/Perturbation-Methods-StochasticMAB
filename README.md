@@ -1,4 +1,4 @@
-# On the Optimality of Perturbations in Stochastic and Adversarial Multi-armed Bandit Problems
+# On the Optimality of Perturbations in Stochastic and Adversarial Multi-armed Bandit Problems - NeurIPS 2019
 
 The algorithms are described and theoretically analayzed in the following work available at: https://arxiv.org/abs/1902.00610. 
 ```
