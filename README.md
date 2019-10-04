@@ -8,5 +8,5 @@ In Advances in Neural Information Processing Systems, 2019.
 ```
 
 If you use this code in your paper, please cite the above work.
-Built with Python 3.7.1. Requires Numpy and Scipy to run experiments and the 
-algorithms themselves. 
+
+The code is built with Python 3.7.1 and it requires Numpy and Scipy to run experiments and the algorithms themselves. 
