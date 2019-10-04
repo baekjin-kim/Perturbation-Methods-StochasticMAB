@@ -36,7 +36,7 @@ class ucb_bandit:
         
     def pull(self):
         # Select action according to UCB Criteria
-        a = np.argmax(self.k_reward + self.c * np.sqrt((np.log(self.n)) / self.k_n))    
+        a = np.argmax(self.k_reward +  np.sqrt((self.c * np.log(self.n)) / self.k_n))
         reward = reward_generate(self.mu[a])
         
         # Update counts
@@ -99,7 +99,7 @@ class RCB_gaussian:
         
     def pull(self):
         # Select action
-        a = np.argmax(self.k_reward + self.c * np.random.normal(0, 1, self.k) / np.sqrt(self.k_n))
+        a = np.argmax(self.k_reward + np.random.normal(0, np.sqrt(self.c), self.k) / np.sqrt(self.k_n))
         reward = reward_generate(self.mu[a])
         # Update counts
         self.n += 1
@@ -161,7 +161,7 @@ class RCB_gaussian:
         
     def pull(self):
         # Select action according to UCB Criteria
-        a = np.argmax(self.k_reward + self.c * np.random.laplace(0, 1, self.k) / np.sqrt(self.k_n))
+        a = np.argmax(self.k_reward + np.random.laplace(0, np.sqrt(self.c), self.k) / np.sqrt(self.k_n))
         reward = reward_generate(self.mu[a])
         
         # Update counts
@@ -224,7 +224,7 @@ class RCB_uniform:
         
     def pull(self):
         # Select action according to UCB Criteria
-        a = np.argmax(self.k_reward + np.random.uniform(-1, 1, k) * self.c * np.sqrt(np.log(self.n) / self.k_n))
+        a = np.argmax(self.k_reward + np.random.uniform(-1, 1, k) * np.sqrt(self.c*(np.log(self.n)) / self.k_n))
         reward = reward_generate(self.mu[a])
         
         # Update counts
@@ -287,7 +287,7 @@ class RCB_uniform:
         
     def pull(self):
         # Select action according to UCB Criteria
-        a = np.argmax(self.k_reward + (2* np.random.binomial(1,0.5,k)-1) * self.c * np.sqrt(np.log(self.n) / self.k_n))
+        a = np.argmax(self.k_reward + (2* np.random.binomial(1,0.5,k)-1) * np.sqrt(self.c*(np.log(self.n)) / self.k_n))
         reward = reward_generate(self.mu[a])
         
         # Update counts
